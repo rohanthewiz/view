@@ -115,7 +115,6 @@ func Time(time time.Time, formats ...string) got.HTML {
 // Date returns a formatted date string given a time and optional format
 // Date format layouts are for the date 2006-01-02
 func Date(t time.Time, formats ...string) got.HTML {
-
 	//layout := "2006-01-02" // Jan 2, 2006
 	layout := "Jan 2, 2006"
 	if len(formats) > 0 {
@@ -123,6 +122,18 @@ func Date(t time.Time, formats ...string) got.HTML {
 	}
 	value := fmt.Sprintf(t.Format(layout))
 	return got.HTML(Escape(value))
+}
+
+func SlashDate(t time.Time) got.HTML {
+	return Date(t, "01/02/2006")
+}
+
+func RemoveBraces(str string) string {
+	str = strings.TrimSpace(str)
+	if str[0:1] == "{" && str[len(str)-1:] == "}" {
+		str = str[1:len(str)-1]
+	}
+	return str
 }
 
 // UTCDate returns a formatted date string in 2006-01-02

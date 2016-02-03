@@ -59,6 +59,8 @@ func DefaultHelpers() parser.FuncMap {
 	// Form helpers
 	funcs["field"] = helpers.Field
 	funcs["datefield"] = helpers.DateField
+	funcs["slashdate"] = helpers.SlashDate
+	funcs["removebraces"] = helpers.RemoveBraces
 	funcs["textarea"] = helpers.TextArea
 	funcs["select"] = helpers.Select
 	funcs["selectarray"] = helpers.SelectArray
