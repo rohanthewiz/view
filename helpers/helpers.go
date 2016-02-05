@@ -130,7 +130,7 @@ func SlashDate(t time.Time) got.HTML {
 
 func RemoveBraces(str string) string {
 	str = strings.TrimSpace(str)
-	if str[0:1] == "{" && str[len(str)-1:] == "}" {
+	if len(str) > 0 && str[0:1] == "{" && str[len(str)-1:] == "}" {
 		str = str[1:len(str)-1]
 	}
 	return str
