@@ -48,6 +48,7 @@ func DefaultHelpers() parser.FuncMap {
 	funcs["html"] = helpers.HTML
 	funcs["htmlattr"] = helpers.HTMLAttribute
 	funcs["url"] = helpers.URL
+	funcs["url_enc"] = helpers.UrlEncoded
 
 	funcs["sanitize"] = helpers.Sanitize
 	funcs["strip"] = helpers.Strip
@@ -60,6 +61,7 @@ func DefaultHelpers() parser.FuncMap {
 	funcs["field"] = helpers.Field
 	funcs["datefield"] = helpers.DateField
 	funcs["slashdate"] = helpers.SlashDate
+	funcs["monthday"] = helpers.MonthDay
 	funcs["removebraces"] = helpers.RemoveBraces
 	funcs["textarea"] = helpers.TextArea
 	funcs["select"] = helpers.Select

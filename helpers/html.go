@@ -3,6 +3,7 @@ package helpers
 import (
 	"fmt"
 	"strings"
+	"net/url"
 
 	got "html/template"
 
@@ -24,7 +25,7 @@ func Escape(s string) string {
 	return got.HTMLEscapeString(s)
 }
 
-// EscapeURL escapes URLs using HTMLEscapeString
+// EscapeURL escapes URLs using QueryEscapeString
 func EscapeURL(s string) string {
 	return got.URLQueryEscaper(s)
 }
@@ -52,6 +53,14 @@ func HTMLAttribute(s string) got.HTMLAttr {
 // URL returns returns a string (which must not contain user input) as go template URL
 func URL(s string) got.URL {
 	return got.URL(s)
+}
+
+func UrlEncoded(str string) (string, error) {
+	u, err := url.Parse(str)
+	if err != nil {
+		return "", err
+	}
+	return u.String(), nil
 }
 
 // Strip all html tags and returns as go template HTML

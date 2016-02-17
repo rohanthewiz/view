@@ -128,6 +128,10 @@ func SlashDate(t time.Time) got.HTML {
 	return Date(t, "01/02/2006")
 }
 
+func MonthDay(t time.Time) got.HTML {
+	return Date(t, "Jan 2")
+}
+
 func RemoveBraces(str string) string {
 	str = strings.TrimSpace(str)
 	if len(str) > 0 && str[0:1] == "{" && str[len(str)-1:] == "}" {
