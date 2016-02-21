@@ -59,6 +59,7 @@ func DefaultHelpers() parser.FuncMap {
 
 	// Form helpers
 	funcs["field"] = helpers.Field
+	funcs["checkbox"] = helpers.Checkbox
 	funcs["datefield"] = helpers.DateField
 	funcs["slashdate"] = helpers.SlashDate
 	funcs["monthday"] = helpers.MonthDay

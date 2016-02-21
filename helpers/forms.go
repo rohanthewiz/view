@@ -231,6 +231,21 @@ type Option struct {
 	Name string
 }
 
+
+func Checkbox(label string, name string, checked bool) got.HTML {
+	tmpl :=
+	`<div class="field checkbox">
+		<input id="%s" name="%s" %s type="checkbox">
+		<label style="display:inline">%s</label>
+	</div>`
+	chkstr := ""
+	if checked {
+		chkstr = `checked="checked"`
+	}
+	esc_name := Escape(name)
+	return got.HTML(fmt.Sprintf(tmpl, esc_name, esc_name, chkstr, Escape(label)))
+}
+
 // Select creates a select field given an array of keys and values in order
 func Select(label string, name string, value int64, options []Option) got.HTML {
 
