@@ -49,6 +49,7 @@ func DefaultHelpers() parser.FuncMap {
 	funcs["htmlattr"] = helpers.HTMLAttribute
 	funcs["url"] = helpers.URL
 	funcs["url_enc"] = helpers.UrlEncoded
+	funcs["url_minus_protocol"] = helpers.UrlMinusProtocol
 
 	funcs["sanitize"] = helpers.Sanitize
 	funcs["strip"] = helpers.Strip

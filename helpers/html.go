@@ -63,6 +63,17 @@ func UrlEncoded(str string) (string, error) {
 	return u.String(), nil
 }
 
+func UrlMinusProtocol(str string) (string, error) {
+	arr := strings.Split(str, "//")
+	var str_out = ""
+	if len(arr) == 2 {
+		str_out = arr[1]
+	} else {
+		str_out = arr[0]
+	}
+	return str_out, nil
+}
+
 // Strip all html tags and returns as go template HTML
 func Strip(s string) got.HTML {
 	return got.HTML(sanitize.HTML(s))
