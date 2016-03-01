@@ -157,6 +157,11 @@ func UTCNow() got.HTML {
 
 // Truncate text to a given length
 func Truncate(s string, l int64) string {
+	if len(s) < 8 {
+		return s
+	} else if int64(len(s) + 3) > l {
+		return s[:l] + "..."
+	}
 	return s
 }
 
