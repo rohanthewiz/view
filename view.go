@@ -64,7 +64,6 @@ func DefaultHelpers() parser.FuncMap {
 	funcs["datefield"] = helpers.DateField
 	funcs["slashdate"] = helpers.SlashDate
 	funcs["monthday"] = helpers.MonthDay
-	funcs["removebraces"] = helpers.RemoveBraces
 	funcs["textarea"] = helpers.TextArea
 	funcs["select"] = helpers.Select
 	funcs["selectarray"] = helpers.SelectArray
@@ -83,6 +82,8 @@ func DefaultHelpers() parser.FuncMap {
 	// String helpers
 	funcs["blank"] = helpers.Blank
 	funcs["exists"] = helpers.Exists
+	funcs["removebraces"] = helpers.RemoveBraces
+	funcs["listofstringscontains"] = helpers.ListOfStringsContains
 
 	// Math helpers
 	funcs["mod"] = helpers.Mod

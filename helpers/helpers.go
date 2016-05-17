@@ -140,6 +140,16 @@ func RemoveBraces(str string) string {
 	return str
 }
 
+func ListOfStringsContains(list string, str string) bool {
+	arr := strings.Split(list, ",")
+	for _, item := range arr {
+		if strings.Trim(item, " ") == str {
+			return true
+		}
+	}
+	return false
+}
+
 // UTCDate returns a formatted date string in 2006-01-02
 func UTCDate(t time.Time) got.HTML {
 	return Date(t.UTC(), "2006-01-02")
