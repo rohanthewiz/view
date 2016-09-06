@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/rohanthewiz/view/helper"
+	"github.com/rohanthewiz/view/helpers"
 	"github.com/rohanthewiz/view/parser"
 )
 
