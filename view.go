@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/fragmenta/view/helpers"
-	"github.com/fragmenta/view/parser"
+	"github.com/rohanthewiz/view/helper"
+	"github.com/rohanthewiz/view/parser"
 )
 
 // TODO remove public pkg vars completely, replace with private vars
